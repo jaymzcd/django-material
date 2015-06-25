@@ -61,6 +61,9 @@
                             {% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
                         -->
                     {% endform %}
+                    {% for inline_admin_formset in inline_admin_formsets %}
+                        {% include inline_admin_formset.opts.template %}
+                    {% endfor %}
                     {# JavaScript for prepopulated fields #}
                     {% prepopulated_fields_js %}
                 </div>
